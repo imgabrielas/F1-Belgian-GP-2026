@@ -14,7 +14,7 @@ Build a machine learning model that predicts the race winner (not the full podiu
 
 1. **Data collection** — qualifying sessions (2021–2026) and race results (2021–2025) for the Belgian GP, pulled via the [FastF1](https://github.com/theOehrly/Fast-F1) API.
 2. **Pre-processing** — drop non-predictive columns, convert Q1/Q2/Q3 lap times to seconds, fill missing values, one-hot encode team name.
-3. **Feature engineering** — best qualifying time (`BestQualiTime`), and qualifying-round improvement gaps (`Q2_Q1_Improvement`, `Q3_Q1_Improvement`).
+3. **Feature engineering** — best qualifying time (`BestQualiTime`), and qualifying-round improvement gaps (`Q1_Q2_Improvement`, `Q2_Q3_Improvement`).
 4. **Modeling** — race winner (binary target) predicted from qualifying features using:
    - Logistic Regression (baseline, with feature scaling)
    - Random Forest Classifier
