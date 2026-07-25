@@ -1,17 +1,22 @@
 # 🏎️ Project Overview
 
-This project explores Formula 1 data using the **FastF1** Python library, combining exploratory data analysis, interactive visualisations, and machine learning to better understand race performance throughout the season.
+This project explores Formula 1 data using the **FastF1** Python library, combining exploratory data analysis and interactive visualisations to better understand race performance throughout the season.
 
 The project follows the current Formula 1 calendar (2026).
+
+## Repository Structure
+
+* `F1_EDA.ipynb` — main exploratory data analysis notebook covering the season as a whole
+* `monaco2026/` — race-weekend deep dive for the Monaco Grand Prix
+  * `weekend_analysis.ipynb` — qualifying and race analysis for the weekend
+  * `weekend_data/` — extracted qualifying, practice, and race CSVs for the weekend
+  * `cache/` — local FastF1 cache (session data and HTTP cache)
 
 ## Objectives
 
 * Collect and clean race data using FastF1
 * Explore driver and constructor performance throughout the season
 * Create interactive visualisations using Plotly
-* Engineer features suitable for predictive modelling
-* Develop machine learning models to predict race outcomes
-* Compare model predictions with actual race results after each Grand Prix
 
 ---
 
@@ -67,21 +72,7 @@ Examples include:
 * Driver and team performance dashboards
 * Interactive Plotly visualisations
 
----
-
-# Machine Learning
-
-As more races become available, the project will explore predictive modelling using historical Formula 1 data.
-
-Potential prediction tasks include:
-
-* Race winner prediction
-* Podium prediction
-* Top 10 finish prediction
-* Constructor points prediction
-* Driver finishing position prediction
-
-The project will investigate multiple machine learning algorithms and compare their performance using appropriate evaluation metrics.
+> **Note:** Plotly charts currently don't render when viewing the notebooks directly on GitHub (reason unclear at this point) — open the notebooks locally (e.g. via Jupyter) to see them.
 
 ---
 
@@ -93,14 +84,24 @@ The project will investigate multiple machine learning algorithms and compare th
 * NumPy
 * Plotly
 * Matplotlib
-* Scikit-learn
 
-Future additions may include:
+---
 
-* XGBoost
-* LightGBM
-* Streamlit
-* Dash
+# Getting Started
+
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Launch Jupyter and open a notebook:
+
+   ```bash
+   jupyter notebook F1_EDA.ipynb
+   ```
+
+FastF1 caches downloaded session data locally (see the `cache/` folders) to avoid re-fetching from the API on every run.
 
 ---
 
@@ -108,4 +109,4 @@ Future additions may include:
 
 This project is currently under active development.
 
-As each Formula 1 Grand Prix takes place, new data will be collected, analysed, and incorporated into the predictive models. The repository will continue to evolve throughout the season with additional analyses, visualisations, and machine learning experiments.
+As each Formula 1 Grand Prix takes place, new data will be collected and analysed. The repository will continue to evolve throughout the season with additional analyses and visualisations.
