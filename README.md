@@ -18,19 +18,17 @@ Build a machine learning model that predicts the race winner (not the full podiu
 4. **Modeling** — race winner (binary target) predicted from qualifying features using:
    - Logistic Regression (baseline, with feature scaling)
    - Random Forest Classifier
-   - Gradient Boosting Classifier
 
 ## Results
 
 Evaluated on a held-out test split:
 
-| Model                | ROC AUC |
-|----------------------|---------|
-| Logistic Regression  | 0.935   |
-| Random Forest        | 0.870   |
-| Gradient Boosting    | 0.957   |
+| Model                | ROC AUC | Precision | Recall | F1 Score |
+|----------------------|---------|-----------|--------|----------|
+| Logistic Regression  | 0.935   | 0.500     | 1.000  | 0.667    |
+| Random Forest        | 0.870   | 0.000     | 0.000  | 0.000    |
 
-Logistic Regression detail: F1 = 0.667, Accuracy = 0.920, Precision = 0.500, Recall = 1.000 (catches every actual winner, with some false positives).
+Logistic Regression catches every actual winner in the test set (Recall = 1.000) at the cost of some false positives (Precision = 0.500). Random Forest misses every winner in the test set at the default 0.5 threshold.
 
 Predicted vs. actual podium, 2026 Belgian GP (Logistic Regression):
 
@@ -41,6 +39,14 @@ Predicted vs. actual podium, 2026 Belgian GP (Logistic Regression):
 | 3rd   | NOR       | VER    |
 
 The model correctly picked the race winner.
+
+## Future Work
+
+This project has potential, but there's still a lot to work on — the current models rely only on qualifying lap times and team, and the dataset is small (six years of a single track).
+
+- **Weather conditions** — incorporate track/air temperature, rainfall, and wind from FastF1's weather data as features, since wet-weather qualifying pace doesn't always translate to race pace.
+- **Safety car likelihood** — engineer a feature for the historical rate of safety car deployments at Spa, since a safety car reshuffles the race and can undercut a pure qualifying-based prediction.
+- More historical data (more tracks/seasons) to reduce the class imbalance between winners and non-winners.
 
 ## Tech Stack
 
