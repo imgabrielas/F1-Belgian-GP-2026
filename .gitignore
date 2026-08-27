@@ -1,3 +1,7 @@
 cache_dir/
 cache/
-*.cache/
+*.cache/data-analysis/monaco2026/cache/
+*.sqlite
+*.sqlite3
+data-analysis/monaco2026/weekend_data/*.csv
+.idea/
