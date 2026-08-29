@@ -110,3 +110,6 @@ FastF1 caches downloaded session data locally (see the `cache/` folders) to avoi
 This project is currently under active development.
 
 As each Formula 1 Grand Prix takes place, new data will be collected and analysed. The repository will continue to evolve throughout the season with additional analyses and visualisations.
+
+
+lol
